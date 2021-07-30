@@ -1,0 +1,12 @@
+# SSL Https active Force non-www
+
+# Hide extension like .html or .php from the URL path show only file name in normal HTML or PHP sites
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule ^demopost/([0-9a-zA-Z]+) demopost.php?id=$1 [NC,L]
+</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
